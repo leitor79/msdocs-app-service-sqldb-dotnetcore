@@ -4,8 +4,22 @@ using DotNetCoreSqlDb.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add database context and cache
+/*
 builder.Services.AddDbContext<MyDatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection")));
+*/
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<MyDatabaseContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection")));
+}
+else
+{
+    builder.Services.AddDbContext<MyDatabaseContext>(options =>
+        options.UseSqlServer(Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING")));
+}
+
 builder.Services.AddDistributedMemoryCache();
 
 // Add services to the container.

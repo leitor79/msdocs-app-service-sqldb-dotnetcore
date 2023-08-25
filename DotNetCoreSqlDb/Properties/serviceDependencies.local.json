@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "",
+      "secretStore": null,
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:MyDbConnection",
+      "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/brazilsouth/connectors/infomarcasmessagingconnectionstring_44FAE6E8AF",
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/infomarcas2016/databases/infomarcas-messaging-db",
+      "type": "mssql.azure",
+      "connectionId": "infomarcas-messaging-connectionstring",
+      "dynamicId": null
+    }
+  }
+}
